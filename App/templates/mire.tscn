@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://dc7wfemctsoxj"]
+
+[ext_resource type="PackedScene" uid="uid://bsse03kxactow" path="res://buttons/track_marker.tscn" id="1_0rlsm"]
+[ext_resource type="FontFile" uid="uid://q3hbl03m21y7" path="res://fonts/Rajdhani/Rajdhani-Medium.ttf" id="1_up0f3"]
+[ext_resource type="Texture2D" uid="uid://u1ejxbgh84wx" path="res://icons/x_circle.png" id="2_gqgnl"]
+[ext_resource type="Script" path="res://scripts/delete_button.gd" id="3_mqv7p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4wbm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0n67k"]
+texture = ExtResource("2_gqgnl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4c5cb"]
+texture = ExtResource("2_gqgnl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jf1j8"]
+texture = ExtResource("2_gqgnl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hlrpp"]
+texture = ExtResource("2_gqgnl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtks5"]
+texture = ExtResource("2_gqgnl")
+
+[node name="mire01" type="Control"]
+custom_minimum_size = Vector2(329, 18)
+layout_mode = 3
+anchor_right = 0.286
+anchor_bottom = 0.028
+offset_right = -329.472
+offset_bottom = -18.144
+size_flags_horizontal = 0
+
+[node name="color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.752941, 0.752941, 0.752941, 0.443137)
+
+[node name="underline" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.833
+anchor_right = 0.897
+anchor_bottom = 0.889
+offset_left = 2.0
+offset_top = 0.00599861
+offset_right = -0.113007
+offset_bottom = -0.00200081
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.056
+anchor_right = 0.836
+anchor_bottom = 1.111
+offset_left = -0.0350001
+offset_top = -0.00800002
+offset_right = -0.052002
+offset_bottom = 0.0019989
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_up0f3")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4wbm")
+scroll_fit_content_height = true
+
+[node name="mire_track" type="HBoxContainer" parent="." groups=["track"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.912
+anchor_top = 0.222
+anchor_right = 0.985
+anchor_bottom = 0.778
+offset_left = -0.0480347
+offset_top = 0.00399971
+offset_right = -0.065033
+offset_bottom = -0.00399971
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="track_marker01" parent="mire_track" instance=ExtResource("1_0rlsm")]
+layout_mode = 2
+
+[node name="track_marker02" parent="mire_track" instance=ExtResource("1_0rlsm")]
+layout_mode = 2
+
+[node name="delete_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.987
+anchor_top = 0.778
+anchor_right = 1.011
+anchor_bottom = 1.222
+offset_left = -0.0410461
+offset_top = -0.00400162
+offset_right = 0.0629578
+offset_bottom = 0.00399971
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_0n67k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4c5cb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jf1j8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hlrpp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_mtks5")
+script = ExtResource("3_mqv7p")
+
+[connection signal="pressed" from="delete_button" to="delete_button" method="_on_pressed"]

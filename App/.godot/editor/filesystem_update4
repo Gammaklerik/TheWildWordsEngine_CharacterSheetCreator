@@ -1,0 +1,14 @@
+res://scenes/blank_sheet.tscn
+res://templates/aspect.tscn
+res://templates/temporary_track.tscn
+res://buttons/rank_button.tscn
+res://buttons/track_marker.tscn
+res://templates/edge.tscn
+res://templates/skill.tscn
+res://templates/language.tscn
+res://templates/mire.tscn
+res://scenes/load_menu.tscn
+res://scenes/new_character.tscn
+res://scenes/load_character.tscn
+res://buttons/template_button.tscn
+res://buttons/character_button.tscn

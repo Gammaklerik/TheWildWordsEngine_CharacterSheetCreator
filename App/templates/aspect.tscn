@@ -1,0 +1,223 @@
+[gd_scene load_steps=28 format=3 uid="uid://febpyd8mrilc"]
+
+[ext_resource type="FontFile" uid="uid://q3hbl03m21y7" path="res://fonts/Rajdhani/Rajdhani-Medium.ttf" id="1_8s8uh"]
+[ext_resource type="Script" path="res://scripts/add_track_marker.gd" id="1_nbc5r"]
+[ext_resource type="PackedScene" uid="uid://bsse03kxactow" path="res://buttons/track_marker.tscn" id="1_pnm6u"]
+[ext_resource type="Texture2D" uid="uid://cm6c5bxgcvxi" path="res://icons/add_circle.png" id="1_xt4dl"]
+[ext_resource type="Texture2D" uid="uid://bbh5mxs3q6ccp" path="res://icons/add_circle_disabled.png" id="2_31qmh"]
+[ext_resource type="Script" path="res://scripts/delete_button.gd" id="2_g44ab"]
+[ext_resource type="Texture2D" uid="uid://42e0t8kftlj2" path="res://icons/subtract_circle.png" id="5_7dse1"]
+[ext_resource type="Texture2D" uid="uid://bmrsup0emdqkd" path="res://icons/subtract_circle_disabled.png" id="6_sa6p3"]
+[ext_resource type="Script" path="res://scripts/subtract_track_marker.gd" id="7_j7kly"]
+[ext_resource type="Texture2D" uid="uid://u1ejxbgh84wx" path="res://icons/x_circle.png" id="8_5ecaq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4wbm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnmd6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k63wd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lw2t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ay1b"]
+texture = ExtResource("1_xt4dl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dswu1"]
+texture = ExtResource("1_xt4dl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2wy2"]
+texture = ExtResource("1_xt4dl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxos6"]
+texture = ExtResource("2_31qmh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kyq50"]
+texture = ExtResource("5_7dse1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khu34"]
+texture = ExtResource("5_7dse1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aw0ss"]
+texture = ExtResource("5_7dse1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7sry"]
+texture = ExtResource("6_sa6p3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abqlm"]
+texture = ExtResource("8_5ecaq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v78jk"]
+texture = ExtResource("8_5ecaq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wvikq"]
+texture = ExtResource("8_5ecaq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_arlkx"]
+texture = ExtResource("8_5ecaq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xc6ou"]
+texture = ExtResource("8_5ecaq")
+
+[node name="aspect01" type="Control"]
+custom_minimum_size = Vector2(325, 54)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 325.0
+offset_bottom = 54.0
+
+[node name="color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.752941, 0.752941, 0.752941, 0.443137)
+
+[node name="name_input" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = -80.0
+offset_bottom = 13.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.0823529, 0.0823529, 0.0823529, 0.666667)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8s8uh")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4wbm")
+placeholder_text = "Aspect Name"
+scroll_fit_content_height = true
+
+[node name="description_input" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.0823529, 0.0823529, 0.0823529, 0.666667)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8s8uh")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4wbm")
+placeholder_text = "Aspect Description"
+wrap_mode = 1
+autowrap_mode = 2
+
+[node name="aspect_category" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_top = -2.0
+offset_right = 3.0
+offset_bottom = 16.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8s8uh")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_pnmd6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k63wd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8lw2t")
+alignment = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Trait"
+popup/item_0/id = 0
+popup/item_1/text = "Gear"
+popup/item_1/id = 1
+popup/item_2/text = "Companion"
+popup/item_2/id = 2
+
+[node name="damage_track" type="HBoxContainer" parent="." groups=["track"]]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.36
+anchor_bottom = 0.36
+offset_left = 1.0
+offset_top = -6.44
+offset_right = 158.0
+offset_bottom = 3.56
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="track_marker01" parent="damage_track" instance=ExtResource("1_pnm6u")]
+layout_mode = 2
+
+[node name="add_track_marker" type="Button" parent="." node_paths=PackedStringArray("track")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 114.0
+offset_top = 13.0
+offset_right = 124.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_0ay1b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dswu1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m2wy2")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hxos6")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_nbc5r")
+track = NodePath("../damage_track")
+track_marker = ExtResource("1_pnm6u")
+
+[node name="subtract_track_marker" type="Button" parent="." node_paths=PackedStringArray("track")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+offset_left = 128.0
+offset_top = 13.0
+offset_right = 138.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_kyq50")
+theme_override_styles/hover = SubResource("StyleBoxTexture_khu34")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aw0ss")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_c7sry")
+disabled = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("7_j7kly")
+track = NodePath("../damage_track")
+
+[node name="delete_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_abqlm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v78jk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wvikq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_arlkx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xc6ou")
+script = ExtResource("2_g44ab")
+
+[connection signal="marker_added" from="add_track_marker" to="subtract_track_marker" method="_on_add_track_marker_marker_added"]
+[connection signal="pressed" from="add_track_marker" to="add_track_marker" method="_on_pressed"]
+[connection signal="marker_subtracted" from="subtract_track_marker" to="add_track_marker" method="_on_subtract_track_marker_marker_subtracted"]
+[connection signal="pressed" from="subtract_track_marker" to="subtract_track_marker" method="_on_pressed"]
+[connection signal="pressed" from="delete_button" to="delete_button" method="_on_pressed"]

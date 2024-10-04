@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc23stwlrw6k1"]
+
+[ext_resource type="FontFile" uid="uid://q3hbl03m21y7" path="res://fonts/Rajdhani/Rajdhani-Medium.ttf" id="1_f0aox"]
+[ext_resource type="Script" path="res://buttons/character_button.gd" id="2_g26ka"]
+
+[node name="character_button" type="Button"]
+custom_minimum_size = Vector2(0, 66)
+offset_right = 158.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("1_f0aox")
+theme_override_font_sizes/font_size = 25
+text = "New Character"
+script = ExtResource("2_g26ka")
+
+[node name="template_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.5
+offset_top = -23.0
+offset_right = 67.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "New Template Template"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

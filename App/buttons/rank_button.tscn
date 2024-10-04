@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://c24kdccenadmq"]
+
+[ext_resource type="Texture2D" uid="uid://crljfyuogaytw" path="res://icons/empty_circle.png" id="1_rq3uu"]
+[ext_resource type="Texture2D" uid="uid://bi42fkk1x7pke" path="res://icons/filled_circle.png" id="2_jv2s5"]
+[ext_resource type="Script" path="res://buttons/rank_button.gd" id="3_y2xib"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b5gvg"]
+texture = ExtResource("1_rq3uu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etctt"]
+texture = ExtResource("1_rq3uu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3paq4"]
+texture = ExtResource("2_jv2s5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjgl7"]
+texture = ExtResource("1_rq3uu")
+
+[node name="rank01" type="Button"]
+custom_minimum_size = Vector2(10, 10)
+offset_right = 10.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_b5gvg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etctt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3paq4")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kjgl7")
+toggle_mode = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_y2xib")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

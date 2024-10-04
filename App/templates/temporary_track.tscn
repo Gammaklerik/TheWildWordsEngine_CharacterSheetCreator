@@ -1,0 +1,220 @@
+[gd_scene load_steps=28 format=3 uid="uid://bvh024baia6x1"]
+
+[ext_resource type="FontFile" uid="uid://q3hbl03m21y7" path="res://fonts/Rajdhani/Rajdhani-Medium.ttf" id="1_1lp71"]
+[ext_resource type="PackedScene" uid="uid://bsse03kxactow" path="res://buttons/track_marker.tscn" id="1_m420k"]
+[ext_resource type="Script" path="res://scripts/delete_button.gd" id="2_0r7y7"]
+[ext_resource type="Texture2D" uid="uid://cm6c5bxgcvxi" path="res://icons/add_circle.png" id="2_a2kgo"]
+[ext_resource type="Texture2D" uid="uid://u1ejxbgh84wx" path="res://icons/x_circle.png" id="2_nixo3"]
+[ext_resource type="Texture2D" uid="uid://bbh5mxs3q6ccp" path="res://icons/add_circle_disabled.png" id="3_2ns24"]
+[ext_resource type="Script" path="res://scripts/add_track_marker.gd" id="4_fkrlf"]
+[ext_resource type="Texture2D" uid="uid://42e0t8kftlj2" path="res://icons/subtract_circle.png" id="5_dwyx5"]
+[ext_resource type="Texture2D" uid="uid://bmrsup0emdqkd" path="res://icons/subtract_circle_disabled.png" id="6_ky0x7"]
+[ext_resource type="Script" path="res://scripts/subtract_track_marker.gd" id="7_bo7jq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4wbm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnmd6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k63wd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lw2t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o18tu"]
+texture = ExtResource("2_a2kgo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e84wg"]
+texture = ExtResource("2_a2kgo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5nh63"]
+texture = ExtResource("2_a2kgo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hja2x"]
+texture = ExtResource("3_2ns24")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xp2sq"]
+texture = ExtResource("5_dwyx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_skd71"]
+texture = ExtResource("5_dwyx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6u4nm"]
+texture = ExtResource("5_dwyx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ht2xd"]
+texture = ExtResource("6_ky0x7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uruwl"]
+texture = ExtResource("2_nixo3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eu6vq"]
+texture = ExtResource("2_nixo3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcnu6"]
+texture = ExtResource("2_nixo3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfuk2"]
+texture = ExtResource("2_nixo3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fgon"]
+texture = ExtResource("2_nixo3")
+
+[node name="temp_track01" type="Control"]
+custom_minimum_size = Vector2(325, 54)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.752941, 0.752941, 0.752941, 0.443137)
+
+[node name="name_input" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = -6.0
+offset_right = -80.0
+offset_bottom = 13.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.0823529, 0.0823529, 0.0823529, 0.666667)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1lp71")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4wbm")
+placeholder_text = "Track Name"
+scroll_fit_content_height = true
+
+[node name="description_input" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.0823529, 0.0823529, 0.0823529, 0.666667)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1lp71")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4wbm")
+placeholder_text = "Track Details"
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="track_category" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 17.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1lp71")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_pnmd6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k63wd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8lw2t")
+alignment = 2
+item_count = 3
+selected = 2
+popup/item_0/text = "Benefit"
+popup/item_0/id = 0
+popup/item_1/text = "Injury"
+popup/item_1/id = 1
+popup/item_2/text = "Track"
+popup/item_2/id = 2
+
+[node name="track" type="HBoxContainer" parent="." groups=["track"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.36
+anchor_bottom = 0.36
+offset_left = 1.0
+offset_top = -6.975
+offset_right = 109.0
+offset_bottom = 3.025
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="track_marker01" parent="track" instance=ExtResource("1_m420k")]
+layout_mode = 2
+
+[node name="add_track_marker" type="Button" parent="." node_paths=PackedStringArray("track")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 114.0
+offset_top = 13.0
+offset_right = 124.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_o18tu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e84wg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5nh63")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hja2x")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_fkrlf")
+track = NodePath("../track")
+track_marker = ExtResource("1_m420k")
+
+[node name="subtract_track_marker" type="Button" parent="." node_paths=PackedStringArray("track")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 128.0
+offset_top = 13.0
+offset_right = 138.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xp2sq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_skd71")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6u4nm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ht2xd")
+disabled = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("7_bo7jq")
+track = NodePath("../track")
+
+[node name="delete_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uruwl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eu6vq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rcnu6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lfuk2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2fgon")
+script = ExtResource("2_0r7y7")
+
+[connection signal="marker_added" from="add_track_marker" to="subtract_track_marker" method="_on_add_track_marker_marker_added"]
+[connection signal="pressed" from="add_track_marker" to="add_track_marker" method="_on_pressed"]
+[connection signal="marker_subtracted" from="subtract_track_marker" to="add_track_marker" method="_on_subtract_track_marker_marker_subtracted"]
+[connection signal="pressed" from="subtract_track_marker" to="subtract_track_marker" method="_on_pressed"]
+[connection signal="pressed" from="delete_button" to="delete_button" method="_on_pressed"]

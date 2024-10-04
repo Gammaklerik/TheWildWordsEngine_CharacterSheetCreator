@@ -1,0 +1,1705 @@
+[gd_scene load_steps=26 format=3 uid="uid://cangyufcwtje1"]
+
+[ext_resource type="Script" path="res://character_creation_space.gd" id="1_mrca5"]
+[ext_resource type="FontFile" uid="uid://q3hbl03m21y7" path="res://fonts/Rajdhani/Rajdhani-Medium.ttf" id="2_3ev2r"]
+[ext_resource type="PackedScene" uid="uid://dc7wfemctsoxj" path="res://templates/mire.tscn" id="2_53ol5"]
+[ext_resource type="PackedScene" uid="uid://dlhao7iihtoq2" path="res://templates/edge.tscn" id="3_ra2ye"]
+[ext_resource type="PackedScene" uid="uid://febpyd8mrilc" path="res://templates/aspect.tscn" id="5_7cwck"]
+[ext_resource type="PackedScene" uid="uid://r632wrlp8ynh" path="res://templates/skill.tscn" id="5_ieq6u"]
+[ext_resource type="Texture2D" uid="uid://cm6c5bxgcvxi" path="res://icons/add_circle.png" id="5_n3vpj"]
+[ext_resource type="Script" path="res://scripts/add_template.gd" id="5_xaikj"]
+[ext_resource type="Texture2D" uid="uid://bbh5mxs3q6ccp" path="res://icons/add_circle_disabled.png" id="6_3suja"]
+[ext_resource type="PackedScene" uid="uid://bvh024baia6x1" path="res://templates/temporary_track.tscn" id="6_8bq2i"]
+[ext_resource type="PackedScene" uid="uid://bilowmtax8s11" path="res://templates/language.tscn" id="6_py8j0"]
+[ext_resource type="Script" path="res://scripts/sheet_template.gd" id="12_vmjew"]
+[ext_resource type="Script" path="res://scripts/sheet_data.gd" id="13_eh5qu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vh443"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.154876, 0.154876, 0.154876, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws88u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76md5"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmhqm"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bywg3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fkr0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2wfr"]
+bg_color = Color(0, 0, 0, 0.0941176)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mi3sx"]
+texture = ExtResource("5_n3vpj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qsfcs"]
+texture = ExtResource("5_n3vpj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6js8m"]
+texture = ExtResource("5_n3vpj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itoe6"]
+texture = ExtResource("6_3suja")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p42p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="character_creation_space" type="Control" node_paths=PackedStringArray("edit_switch_button", "sheet_template", "sheet_data", "to_roll_text_edit", "results_text_edit", "bloodline_text_edit", "origin_text_edit", "post_text_edit", "resource_01_edit", "resource_02_edit", "resource_03_edit", "resource_04_edit", "bloodline_underline", "origin_underline", "post_underline", "resource_01_underline", "resource_02_underline", "resource_03_underline", "resource_04_underline", "edges_container", "add_edges_button", "skills_container", "add_skills_button", "languages_container", "add_languages_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrca5")
+edit_switch_button = NodePath("layout_edit_switch")
+sheet_template = NodePath("sheet_template")
+sheet_data = NodePath("sheet_data")
+to_roll_text_edit = NodePath("character_sheet/sheet_container/section01/how_to_play/container/to_roll/to_roll_text_edit")
+results_text_edit = NodePath("character_sheet/sheet_container/section01/how_to_play/container/results/results_text_edit")
+bloodline_text_edit = NodePath("character_sheet/sheet_container/section01/background/background_items/bloodline/template_edit")
+origin_text_edit = NodePath("character_sheet/sheet_container/section01/background/background_items/origin/template_edit")
+post_text_edit = NodePath("character_sheet/sheet_container/section01/background/background_items/post/template_edit")
+resource_01_edit = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource01/header/header_text_edit")
+resource_02_edit = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource02/header/header_text_edit")
+resource_03_edit = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource03/header/header_text_edit")
+resource_04_edit = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource04/header/header_text_edit")
+bloodline_underline = NodePath("character_sheet/sheet_container/section01/background/background_items/bloodline/bg_underline")
+origin_underline = NodePath("character_sheet/sheet_container/section01/background/background_items/origin/bg_underline")
+post_underline = NodePath("character_sheet/sheet_container/section01/background/background_items/post/bg_underline")
+resource_01_underline = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource01/header/bg_underline")
+resource_02_underline = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource02/header/bg_underline")
+resource_03_underline = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource03/header/bg_underline")
+resource_04_underline = NodePath("character_sheet/sheet_container/section02/resources/resources_container/resource04/header/bg_underline")
+edges_container = NodePath("character_sheet/sheet_container/section02/edges/edges_container")
+add_edges_button = NodePath("character_sheet/sheet_container/section02/edges/add_template")
+skills_container = NodePath("character_sheet/sheet_container/section02/skills/skills_container")
+add_skills_button = NodePath("character_sheet/sheet_container/section02/skills/add_template")
+languages_container = NodePath("character_sheet/sheet_container/section02/languages/languages_container")
+add_languages_button = NodePath("character_sheet/sheet_container/section02/languages/add_template")
+
+[node name="character_sheet" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.064
+anchor_top = 0.014
+anchor_right = 0.936
+anchor_bottom = 0.986
+offset_left = 0.271996
+offset_top = -0.0720005
+offset_right = -0.272095
+offset_bottom = 0.0719604
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sheet_color" type="ColorRect" parent="character_sheet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sheet_container" type="HBoxContainer" parent="character_sheet"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="section01" type="VBoxContainer" parent="character_sheet/sheet_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="how_to_play" type="Control" parent="character_sheet/sheet_container/section01"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/how_to_play"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.16
+offset_bottom = 1.8
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/how_to_play/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/how_to_play/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "HOW TO PLAY"
+
+[node name="container" type="HBoxContainer" parent="character_sheet/sheet_container/section01/how_to_play"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.184
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="to_roll" type="Control" parent="character_sheet/sheet_container/section01/how_to_play/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/how_to_play/container/to_roll"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.224
+offset_bottom = 0.0479984
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/how_to_play/container/to_roll/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/how_to_play/container/to_roll/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.696
+offset_right = 73.124
+offset_bottom = 10.696
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "TO ROLL"
+
+[node name="to_roll_text_edit" type="TextEdit" parent="character_sheet/sheet_container/section01/how_to_play/container/to_roll"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.245
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.0100002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_vh443")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ws88u")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_76md5")
+text = "Edge (1d6)
+Skill (Up To 3d6)
+Advantage (Up To 2d6)"
+editable = false
+
+[node name="results" type="Control" parent="character_sheet/sheet_container/section01/how_to_play/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/how_to_play/container/results"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.224
+offset_bottom = 0.0479984
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/how_to_play/container/results/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/how_to_play/container/results/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 72.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "RESULTS"
+
+[node name="results_text_edit" type="TextEdit" parent="character_sheet/sheet_container/section01/how_to_play/container/results"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.235
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.0300007
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_vh443")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jmhqm")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_jmhqm")
+text = "Triumph [6]
+Conflict [5/4]
+Disaster [3/2/1]
+Twist [Doubles]"
+editable = false
+autowrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="background" type="Control" parent="character_sheet/sheet_container/section01"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/background"]
+layout_mode = 1
+anchor_top = -0.008
+anchor_right = 1.0
+anchor_bottom = 0.183
+offset_top = -0.04
+offset_bottom = 0.039999
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/background/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/background/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "BACKGROUND"
+
+[node name="background_items" type="VBoxContainer" parent="character_sheet/sheet_container/section01/background"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="name" type="Control" parent="character_sheet/sheet_container/section01/background/background_items"]
+layout_mode = 2
+
+[node name="text" type="Label" parent="character_sheet/sheet_container/section01/background/background_items/name"]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+text = "Name"
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/name"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4.0
+offset_right = 186.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_bywg3")
+scroll_fit_content_height = true
+
+[node name="underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/name"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="player" type="Control" parent="character_sheet/sheet_container/section01/background/background_items"]
+layout_mode = 2
+
+[node name="text" type="Label" parent="character_sheet/sheet_container/section01/background/background_items/player"]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+text = "Player"
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/player"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4.0
+offset_right = 186.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_bywg3")
+scroll_fit_content_height = true
+
+[node name="underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/player"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="bloodline" type="Control" parent="character_sheet/sheet_container/section01/background/background_items"]
+layout_mode = 2
+
+[node name="template_edit" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/bloodline" groups=["template"]]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 59.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_4fkr0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4fkr0")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_4fkr0")
+text = "Bloodline"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/bloodline"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 57.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/bloodline"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4.0
+offset_right = 187.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_bywg3")
+scroll_fit_content_height = true
+
+[node name="underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/bloodline"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="origin" type="Control" parent="character_sheet/sheet_container/section01/background/background_items"]
+layout_mode = 2
+
+[node name="template_edit" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/origin" groups=["template"]]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 62.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_4fkr0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4fkr0")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_4fkr0")
+text = "Origin"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/origin"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 57.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/origin"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -4.0
+offset_right = 187.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_bywg3")
+scroll_fit_content_height = true
+
+[node name="underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/origin"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 14.0
+offset_right = 188.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="post" type="Control" parent="character_sheet/sheet_container/section01/background/background_items"]
+layout_mode = 2
+
+[node name="template_edit" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/post" groups=["template"]]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 62.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_4fkr0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4fkr0")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_4fkr0")
+text = "Post"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/post"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 57.0
+offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/background/background_items/post"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -6.0
+offset_right = 187.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_bywg3")
+scroll_fit_content_height = true
+
+[node name="underline" type="ColorRect" parent="character_sheet/sheet_container/section01/background/background_items/post"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 13.0
+color = Color(0, 0, 0, 1)
+
+[node name="milestones" type="Control" parent="character_sheet/sheet_container/section01"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/milestones"]
+layout_mode = 1
+anchor_top = -0.075
+anchor_right = 1.0
+anchor_bottom = 0.108
+offset_bottom = 0.04
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/milestones/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/milestones/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.327
+anchor_right = 0.427
+anchor_bottom = 1.327
+offset_top = 6.99668
+offset_right = -31.91
+offset_bottom = -6.99668
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "MILESTONES"
+
+[node name="container" type="HBoxContainer" parent="character_sheet/sheet_container/section01/milestones"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.116
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.151999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="major_milestones" type="Control" parent="character_sheet/sheet_container/section01/milestones/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/milestones/container/major_milestones"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.222
+offset_bottom = 0.0239983
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/milestones/container/major_milestones/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/milestones/container/major_milestones/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.271
+anchor_right = 0.802
+anchor_bottom = 1.304
+offset_top = 6.2
+offset_right = -0.0570068
+offset_bottom = -6.992
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "MAJOR"
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/milestones/container/major_milestones"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.231
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.052
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="minor_milestones" type="Control" parent="character_sheet/sheet_container/section01/milestones/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/milestones/container/minor_milestones"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.222
+offset_bottom = 0.0239983
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/milestones/container/minor_milestones/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/milestones/container/minor_milestones/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.271
+anchor_right = 0.803
+anchor_bottom = 1.304
+offset_top = 6.2
+offset_right = -0.0350037
+offset_bottom = -6.992
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "MINOR"
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/milestones/container/minor_milestones"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.231
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.052
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="drives" type="Control" parent="character_sheet/sheet_container/section01"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/drives"]
+layout_mode = 1
+anchor_top = -0.025
+anchor_right = 1.0
+anchor_bottom = 0.15
+offset_bottom = 1.0
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/drives/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/drives/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "DRIVES"
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section01/drives"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.165
+anchor_right = 1.0
+anchor_bottom = 0.992
+offset_top = 0.199999
+offset_bottom = -0.0400085
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="mires" type="Control" parent="character_sheet/sheet_container/section01"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section01/mires"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.133
+offset_bottom = 0.04
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section01/mires/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.187
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.0079999
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section01/mires/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "MIRES"
+
+[node name="mires_container" type="VBoxContainer" parent="character_sheet/sheet_container/section01/mires"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.151
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.00900078
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="mire01" parent="character_sheet/sheet_container/section01/mires/mires_container" instance=ExtResource("2_53ol5")]
+layout_mode = 2
+
+[node name="add_template" type="Button" parent="character_sheet/sheet_container/section01/mires" node_paths=PackedStringArray("template_container")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -3.0
+offset_right = -1.0
+offset_bottom = 16.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3sx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsfcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6js8m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_itoe6")
+action_mode = 0
+script = ExtResource("5_xaikj")
+template_container = NodePath("../mires_container")
+template = ExtResource("2_53ol5")
+
+[node name="section02" type="VBoxContainer" parent="character_sheet/sheet_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="edges" type="Control" parent="character_sheet/sheet_container/section02"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="edges_container" type="GridContainer" parent="character_sheet/sheet_container/section02/edges" groups=["layout_editable"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.152
+anchor_right = 1.0
+anchor_bottom = 0.992
+offset_top = 7.83599
+offset_bottom = -4.52401
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 51
+theme_override_constants/v_separation = 3
+columns = 3
+
+[node name="edge01" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge02" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge03" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge04" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge05" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge06" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge07" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge08" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="edge09" parent="character_sheet/sheet_container/section02/edges/edges_container" instance=ExtResource("3_ra2ye")]
+layout_mode = 2
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/edges"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.186
+offset_bottom = -2.994
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/edges/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.314
+offset_bottom = 6.6262
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section02/edges/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 109.0
+offset_bottom = 23.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "EDGES"
+
+[node name="add_template" type="Button" parent="character_sheet/sheet_container/section02/edges" node_paths=PackedStringArray("template_container")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 20.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3sx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsfcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6js8m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_itoe6")
+action_mode = 0
+script = ExtResource("5_xaikj")
+template_container = NodePath("../edges_container")
+template = ExtResource("3_ra2ye")
+
+[node name="skills" type="Control" parent="character_sheet/sheet_container/section02"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="skills_container" type="GridContainer" parent="character_sheet/sheet_container/section02/skills" groups=["layout_editable"]]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.135
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.0450001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+columns = 3
+
+[node name="skill01" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill02" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill03" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill04" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill05" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill06" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill07" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill08" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill09" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill10" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill11" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill12" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill13" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill14" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill15" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill16" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill17" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="skill18" parent="character_sheet/sheet_container/section02/skills/skills_container" instance=ExtResource("5_ieq6u")]
+layout_mode = 2
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/skills"]
+layout_mode = 1
+anchor_top = -0.031
+anchor_right = 1.0
+anchor_bottom = 0.142
+offset_top = 0.0300002
+offset_bottom = 0.539999
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/skills/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section02/skills/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "SKILLS"
+
+[node name="add_template" type="Button" parent="character_sheet/sheet_container/section02/skills" node_paths=PackedStringArray("template_container")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = 17.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3sx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsfcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6js8m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_itoe6")
+action_mode = 0
+script = ExtResource("5_xaikj")
+template_container = NodePath("../skills_container")
+template = ExtResource("5_ieq6u")
+
+[node name="languages" type="Control" parent="character_sheet/sheet_container/section02"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="languages_container" type="GridContainer" parent="character_sheet/sheet_container/section02/languages" groups=["layout_editable"]]
+layout_direction = 2
+layout_mode = 2
+offset_left = -0.5
+offset_top = 17.0
+offset_right = 330.5
+offset_bottom = 134.0
+theme_override_constants/h_separation = 75
+theme_override_constants/v_separation = 2
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="language01" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language02" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language03" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language04" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language05" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language06" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language07" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language08" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language09" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language10" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language11" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language12" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language13" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="language14" parent="character_sheet/sheet_container/section02/languages/languages_container" instance=ExtResource("6_py8j0")]
+layout_mode = 2
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/languages"]
+layout_mode = 1
+anchor_top = -0.031
+anchor_right = 1.0
+anchor_bottom = 0.119
+offset_top = 0.0300002
+offset_bottom = 1.53
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/languages/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section02/languages/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "LANGUAGES"
+
+[node name="add_template" type="Button" parent="character_sheet/sheet_container/section02/languages" node_paths=PackedStringArray("template_container")]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -3.0
+offset_right = -1.0
+offset_bottom = 16.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3sx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsfcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6js8m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_itoe6")
+action_mode = 0
+script = ExtResource("5_xaikj")
+template_container = NodePath("../languages_container")
+template = ExtResource("6_py8j0")
+
+[node name="resources" type="Control" parent="character_sheet/sheet_container/section02"]
+custom_minimum_size = Vector2(325, 215)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="resources_container" type="GridContainer" parent="character_sheet/sheet_container/section02/resources"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.098
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_top = -0.0699997
+offset_bottom = -0.0550079
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="resource01" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container/resource01"]
+layout_mode = 1
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.256
+offset_top = 0.00999993
+offset_bottom = -0.0400009
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource01/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 1.091
+offset_top = 0.00200009
+offset_bottom = -12.373
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text_edit" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource01/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 0.803
+offset_top = -1.50751
+offset_bottom = -1.99417
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2p42p")
+text = "SALVAGE"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource01/header"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 158.0
+offset_bottom = 18.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource01"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17
+anchor_right = 1.0
+anchor_bottom = 1.011
+offset_top = -0.0400009
+offset_bottom = -0.232002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="resource02" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container/resource02"]
+layout_mode = 1
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.256
+offset_top = 0.00999993
+offset_bottom = -0.0400009
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource02/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 1.091
+offset_top = 0.00200009
+offset_bottom = -12.373
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text_edit" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource02/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 0.803
+offset_top = -1.50751
+offset_bottom = -1.99417
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2p42p")
+text = "SPECIMENS"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource02/header"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 158.0
+offset_bottom = 18.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource02"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17
+anchor_right = 1.0
+anchor_bottom = 1.011
+offset_top = -0.0400009
+offset_bottom = -0.232002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="resource03" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container/resource03"]
+layout_mode = 1
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.256
+offset_top = 0.00999993
+offset_bottom = -0.0400009
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource03/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 1.091
+offset_top = 0.00200009
+offset_bottom = -12.373
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text_edit" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource03/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 0.803
+offset_top = -1.50751
+offset_bottom = -1.99417
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2p42p")
+text = "WHISPERS"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource03/header"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 158.0
+offset_bottom = 18.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource03"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17
+anchor_right = 1.0
+anchor_bottom = 1.011
+offset_top = -0.0400009
+offset_bottom = -0.232002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="resource04" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/resources/resources_container/resource04"]
+layout_mode = 1
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.256
+offset_top = 0.00999993
+offset_bottom = -0.0400009
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource04/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 1.091
+offset_top = 0.00200009
+offset_bottom = -12.373
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.419608, 0.419608, 0.419608, 1)
+
+[node name="header_text_edit" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource04/header"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.091
+anchor_right = 1.0
+anchor_bottom = 0.803
+offset_top = -1.50751
+offset_bottom = -1.99417
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2p42p")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_2p42p")
+text = "CHARTS"
+editable = false
+scroll_fit_content_height = true
+
+[node name="bg_underline" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/resources_container/resource04/header"]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 158.0
+offset_bottom = 18.0
+color = Color(0, 0, 0, 1)
+
+[node name="input" type="TextEdit" parent="character_sheet/sheet_container/section02/resources/resources_container/resource04"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17
+anchor_right = 1.0
+anchor_bottom = 1.011
+offset_top = -0.0400009
+offset_bottom = -0.232002
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_m2wfr")
+wrap_mode = 1
+autowrap_mode = 1
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section02/resources"]
+layout_mode = 1
+anchor_top = -0.009
+anchor_right = 1.0
+anchor_bottom = 0.088
+offset_top = -0.0649999
+offset_bottom = 0.0799999
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section02/resources/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section02/resources/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "RESOURCES"
+
+[node name="section03" type="VBoxContainer" parent="character_sheet/sheet_container"]
+custom_minimum_size = Vector2(325, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="aspects" type="Control" parent="character_sheet/sheet_container/section03"]
+custom_minimum_size = Vector2(325, 428)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section03/aspects"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.049
+offset_bottom = 0.00599957
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section03/aspects/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section03/aspects/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "ASPECTS"
+
+[node name="aspects_container" type="VBoxContainer" parent="character_sheet/sheet_container/section03/aspects"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.056
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.136
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="aspect01" parent="character_sheet/sheet_container/section03/aspects/aspects_container" instance=ExtResource("5_7cwck")]
+layout_mode = 2
+
+[node name="add_template" type="Button" parent="character_sheet/sheet_container/section03/aspects" node_paths=PackedStringArray("template_container")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 20.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3sx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsfcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6js8m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_itoe6")
+action_mode = 0
+script = ExtResource("5_xaikj")
+template_container = NodePath("../aspects_container")
+template = ExtResource("5_7cwck")
+
+[node name="temporary_tracks" type="Control" parent="character_sheet/sheet_container/section03"]
+custom_minimum_size = Vector2(325, 187)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="header" type="Control" parent="character_sheet/sheet_container/section03/temporary_tracks"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.081
+offset_top = -2.0
+offset_bottom = 4.853
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="character_sheet/sheet_container/section03/temporary_tracks/header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="header_text" type="Label" parent="character_sheet/sheet_container/section03/temporary_tracks/header"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 109.0
+offset_bottom = 11.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 28
+text = "TEMPORARY TRACKS"
+
+[node name="temporary_tracks_container" type="VBoxContainer" parent="character_sheet/sheet_container/section03/temporary_tracks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.091
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.983
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="add_template" type="Button" parent="character_sheet/sheet_container/section03/temporary_tracks" node_paths=PackedStringArray("template_container")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 18.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mi3sx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsfcs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6js8m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_itoe6")
+action_mode = 0
+script = ExtResource("5_xaikj")
+template_container = NodePath("../temporary_tracks_container")
+template = ExtResource("6_8bq2i")
+
+[node name="layout_edit_switch" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.936
+anchor_top = 0.002
+anchor_right = 0.999
+anchor_bottom = 0.04
+offset_left = -0.272095
+offset_top = -0.296
+offset_right = 0.151855
+offset_bottom = 0.079998
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 12
+toggle_mode = true
+text = "Edit Layout"
+
+[node name="save_template" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_top = 27.0
+offset_bottom = 52.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_3ev2r")
+theme_override_font_sizes/font_size = 12
+text = "Save Template"
+
+[node name="sheet_template" type="Node" parent="."]
+script = ExtResource("12_vmjew")
+
+[node name="sheet_data" type="Node" parent="."]
+script = ExtResource("13_eh5qu")
+
+[node name="save_dialog" type="FileDialog" parent="."]
+title = "Save Template"
+position = Vector2i(340, 171)
+size = Vector2i(550, 350)
+ok_button_text = "Save"
+access = 1
+use_native_dialog = true
+
+[connection signal="pressed" from="character_sheet/sheet_container/section01/mires/add_template" to="character_sheet/sheet_container/section01/mires/add_template" method="_on_pressed"]
+[connection signal="pressed" from="character_sheet/sheet_container/section02/edges/add_template" to="character_sheet/sheet_container/section02/edges/add_template" method="_on_pressed"]
+[connection signal="pressed" from="character_sheet/sheet_container/section02/skills/add_template" to="character_sheet/sheet_container/section02/skills/add_template" method="_on_pressed"]
+[connection signal="pressed" from="character_sheet/sheet_container/section02/languages/add_template" to="character_sheet/sheet_container/section02/languages/add_template" method="_on_pressed"]
+[connection signal="pressed" from="character_sheet/sheet_container/section03/aspects/add_template" to="character_sheet/sheet_container/section03/aspects/add_template" method="_on_pressed"]
+[connection signal="pressed" from="character_sheet/sheet_container/section03/temporary_tracks/add_template" to="character_sheet/sheet_container/section03/temporary_tracks/add_template" method="_on_pressed"]
+[connection signal="toggled" from="layout_edit_switch" to="." method="_on_layout_edit_switch_toggled"]
+[connection signal="pressed" from="save_template" to="." method="_on_save_template_pressed"]
+[connection signal="confirmed" from="save_dialog" to="." method="_on_save_dialog_confirmed"]
+[connection signal="dir_selected" from="save_dialog" to="." method="_on_save_dialog_dir_selected"]

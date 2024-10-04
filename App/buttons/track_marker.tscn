@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsse03kxactow"]
+
+[ext_resource type="Texture2D" uid="uid://crljfyuogaytw" path="res://icons/empty_circle.png" id="1_0tkvx"]
+[ext_resource type="Script" path="res://buttons/track_marker.gd" id="2_fyvmw"]
+[ext_resource type="Texture2D" uid="uid://d3o3o3i6d5n7a" path="res://icons/mark.png" id="3_wshgq"]
+[ext_resource type="Texture2D" uid="uid://g4cuq61q1ami" path="res://icons/burn.png" id="4_u3kii"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qm8a3"]
+texture = ExtResource("1_0tkvx")
+
+[node name="track_marker01" type="Button" groups=["marker"]]
+custom_minimum_size = Vector2(10, 10)
+offset_right = 10.0
+offset_bottom = 10.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_qm8a3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qm8a3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qm8a3")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qm8a3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qm8a3")
+action_mode = 0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_fyvmw")
+mark = ExtResource("3_wshgq")
+burn = ExtResource("4_u3kii")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

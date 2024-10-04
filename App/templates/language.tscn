@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://bilowmtax8s11"]
+
+[ext_resource type="FontFile" uid="uid://q3hbl03m21y7" path="res://fonts/Rajdhani/Rajdhani-Medium.ttf" id="1_lkcwg"]
+[ext_resource type="PackedScene" uid="uid://c24kdccenadmq" path="res://buttons/rank_button.tscn" id="1_ya0in"]
+[ext_resource type="Texture2D" uid="uid://u1ejxbgh84wx" path="res://icons/x_circle.png" id="2_76aw1"]
+[ext_resource type="Script" path="res://scripts/delete_button.gd" id="3_cgmlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcj16"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qrf55"]
+texture = ExtResource("2_76aw1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3t88"]
+texture = ExtResource("2_76aw1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8621"]
+texture = ExtResource("2_76aw1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x8ctp"]
+texture = ExtResource("2_76aw1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h1n5v"]
+texture = ExtResource("2_76aw1")
+
+[node name="language01" type="Control"]
+custom_minimum_size = Vector2(128, 15)
+layout_mode = 3
+anchor_right = 0.110882
+anchor_bottom = 0.025
+offset_right = 0.263992
+offset_bottom = -0.200001
+metadata/_edit_use_anchors_ = true
+
+[node name="name" type="TextEdit" parent="."]
+layout_mode = 2
+offset_right = 114.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.0823529, 0.0823529, 0.0823529, 0.666667)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("1_lkcwg")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_wcj16")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wcj16")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_wcj16")
+placeholder_text = "New_Language"
+editable = false
+scroll_fit_content_height = true
+
+[node name="rank_track" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="rank01" parent="rank_track" instance=ExtResource("1_ya0in")]
+layout_mode = 2
+
+[node name="rank02" parent="rank_track" instance=ExtResource("1_ya0in")]
+layout_mode = 2
+
+[node name="rank03" parent="rank_track" instance=ExtResource("1_ya0in")]
+layout_mode = 2
+
+[node name="delete_button" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -4.0
+offset_right = -128.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_qrf55")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i3t88")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j8621")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x8ctp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_h1n5v")
+script = ExtResource("3_cgmlc")
+
+[node name="underline" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+offset_top = 15.0
+offset_right = 88.0
+offset_bottom = 16.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="delete_button" to="delete_button" method="_on_pressed"]
